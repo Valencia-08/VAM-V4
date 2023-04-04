@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V.A.M. Portfolios</title>
+    <link rel="icon" href="assets/imgs/logo-circle.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="assets/imgs/logo-circle.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Raleway:wght@300&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Navigation START-->
+    <nav class="navbar">
+        <section class="navbar-header">
+            <a href="./index.html" class="logo logo--navbar">V.A.M.</a>
+            <span class="navbar-toggle --hide">
+                <i class="navbar-icon fa fa-solid fa-bars"></i>
+            </span>
+        </section>
+        <ul class="navbar-list navbar-list--main">
+            <li class="navbar-list-item">
+                <a href="./index.html" class="navbar-link">Home</a>
+            </li>
+            <li class="navbar-list-item navbar-list-item--has-list">
+                <span class="navbar-link-with-icon">
+                    <a href="./about.html" class="navbar-link">About</a>
+                    <i class="navbar-icon fa fa-sharp fa-light fa-caret-down"></i>
+                </span>
+                <ul class="navbar-list navbar-list--dropdown --hide">
+                    <li class="navbar-list-item">
+                        <a href="./services.html" class="navbar-link">Services</a>
+                    </li>
+                    <li class="navbar-list-item">
+                        <a href="./work.html" class="navbar-link">Our Work</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar-list-item">
+                <a href="./contact.html" class="navbar-link">Meet the team</a>
+                
+            </li>
+        </ul>
+    </nav>
+    <!--Navigation END-->
+
+    <!--Footer START-->
+    <footer class="footer">
+        <a href="./index.html" class="logo logo--footer" id="footer-logo">V.A.M.</a> 
+        <span class="website-rights">© V.A.M. 2023. All rights reserved</span>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon-link" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/?lang=en" class="social-icon-link" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon-link" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/" class="social-icon-link" target="_blank">
+                <i class="fa fa-youtube"></i>
+            </a>
+            <a href="https://github.com" class="social-icon-link" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        </div>
+        <button class="open-button">CONTACT US</button>
+    
+    </footer>
+
+    <form class="form --hide" action="" method="post">
+        <h1 class="form-title">Send</h1>
+        <label class="form-label" for="contactEmail">Email</label>
+        <input class="form-input" id="contactEmail" type="text" placeholder="Enter Email" required>
+        <label class="form-label" for="contactMessage">Message</label>
+        <textarea class="form-textarea" id="contactMessage" rows="10" placeholder="Enter Message" required></textarea>
+        <button class="form-button form-button--send">Send</button>
+        <button class="form-button form-button--cancel">Cancel</button>
+    </form>
+    <!--Footer END-->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  
+    <script>
+       //define variables
+       let small_break_point = 767;
+       let animation_speed = 180;
+       let animation_easing = 'swing';
+       //add active class to active link
+       $("a[href*='" + location.pathname + "']").addClass("navbar-link--active");
+       //show or hide menu on screen resizing
+       $(window).on('resize', function(){
+           let width = window.innerWidth;//get size of browser window
+           if(width > small_break_point){
+               $(".navbar-list--main").css('display','grid');//show menu when resizing to large screen 
+               return;
+           }else{
+               $(".navbar-list--main").css('display','none');//hide menu when resizing to small screen
+               return;
+           }
+       });
+       //show or hide main navigation on menu icon click
+       $(".navbar-toggle").on("click", function(){
+          $(".navbar-list--main").slideToggle(animation_speed,animation_easing,function(){
+               if($(this).is(':visible'))$(this).css('display','grid');
+          }); 
+       });
+       //show or hide dropdown menus on dropdown icon click
+       $(".navbar-list-item--has-list").on("click", ".navbar-icon",function(){
+           $(this).parent().parent().find(".navbar-list--dropdown").slideToggle(animation_speed,animation_easing,function(){
+               if($(this).is(':visible'))$(this).css('display','grid');
+           });
+           
+           $(this).toggleClass("fa-caret-right fa-caret-down");
+       });
+       //show contact form on contact button click 
+       $(".open-button").on("click", function(){
+           $(".form").show(animation_speed,function(){
+               if($(this).is(':visible'))$(this).css('display','grid');
+          });
+       });
+       $(".form-button--cancel").on("click", function(){
+           if($(".form").is(':visible'))$(".form").hide(animation_speed);
+       });
+
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+html, body {
+    /* margin: 0; */
+    height: 100%;
+}
+body {
+    display: grid;
+    /* grid-gap: 10px; */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "Nav"
+        "Overview"
+        "Footer";
+    grid-template-rows: auto 1fr auto;
+    background-color: black;
+}
+/****************************/
+.navbar,
+.navbar-header,
+.navbar-list,
+.navbar-list-item,
+.navbar-icon,
+.navbar-link,
+.navbar-link-with-icon,
+.navbar-toggle,
+.logo,
+.form,
+.form-title,
+.form-label,
+.form-input,
+.form-textarea,
+.form-button,
+.overview,
+.card-collection,
+.card-collection-title,
+.card,
+.card-title,
+.card-image,
+.card-content,
+.card-links,
+.card-link,
+.card-link-icon,
+.footer,
+.website-rights,
+.social-icons,
+.social-icon-link,
+.open-button{
+    display:grid;
+    box-sizing: border-box;
+    grid-gap:0;
+    padding:10px;
+    color: white;
+    text-decoration: none;
+}
+.navbar{
+    grid-area: Nav;
+    grid-auto-flow:column;
+    grid-template-columns: 1fr auto;
+    background-color: black;
+    width: 75%;
+    justify-self: center;
+}
+.navbar-header{
+    padding:0;
+}
+.logo--navbar{
+    font-family: Zen Tokyo Zoo;
+    font-size: 4rem;
+}
+.navbar-list{
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-list--main{
+    grid-auto-flow:column;
+    grid-gap:0;
+    justify-content: left;
+}
+.navbar-list-item{
+    padding:0;
+}
+.navbar-link-with-icon{
+    cursor:pointer;
+    padding:0;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+.navbar-link--active{
+    color:#E63946;
+}
+
+/****************************/
+.form{
+    width: 300px;
+    position: fixed;
+    bottom:0;
+    right:0;
+    grid-gap:10px;
+    border:1px solid #777;
+    border-radius: 3px;
+    background-color:white;
+    color:black;
+    font-family: 'Raleway', sans-serif;    
+}
+.form-title{
+    font-size: 2em;
+}
+.form-input,.form-textarea,.form-label,.form-title,.form-button{
+    color:inherit;
+    font-family: inherit;
+}
+.form-button{
+    color:white;
+    border-radius: 10px;
+}
+.form-button--send{
+  background-color: #04AA6D;
+  border: 1px solid #04AA6D;
+}
+.form-button--cancel{
+    background-color: #E63946;;
+    border: 1px solid #E63946;;
+  }
+/****************************/
+.overview{
+    grid-area: Overview;
+    background: linear-gradient(#efefef, #dfdfdf);
+}
+.card-collection{
+    grid-gap:10px;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-auto-flow: dense;
+    align-items: start;
+    justify-items: center;
+    justify-self:center;
+    max-width:75%;
+}
+.card-collection-title{
+    color: #ffb100;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size:5.9vw;
+    justify-self: center;
+}
+.card{
+    color:black;
+    border:1px solid #c7c7c7;
+    border-radius:3px;
+    background-color: white;
+    box-shadow: 3px 3px 12px #d5d5d5;
+    font-family: 'Raleway', sans-serif;
+    grid-auto-flow: dense;
+    transition: all 180ms ease-in-out;
+}
+.card-image{
+    border-radius: 100px;
+    justify-self: center;
+}
+.card-title{
+    color:#333;
+    font-size:2em;
+}
+.card-content{
+    color:inherit;
+}
+
+.card-link-icon,.card-link{
+    padding:0;
+    color:inherit;
+    font-size:1.25em;
+}
+.card-link{
+    padding:10px;
+    /* background-color: #d5d5d5; */
+    border:1px solid #c7c7c7;
+    border-radius: 5px;
+}
+.card-links{
+    width:auto;
+    grid-auto-flow: column;
+    justify-content: right;
+    grid-gap:10px;
+    color:#333;
+    margin-bottom:10px;
+}
+/****************************/
+.footer{
+    grid-area: Footer;
+    grid-template-areas:"Logo Rights Social Button";
+    align-items: center;
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
+.logo--footer{
+    grid-area: Logo;
+    font-family: Zen Tokyo Zoo;
+    font-size: 2rem;
+}
+.website-rights{
+    grid-area: Rights;
+}
+.social-icons{
+    grid-area: Social;
+    grid-auto-flow: column;
+    width:auto;
+    justify-content: left;
+    color: #ffb100;
+}
+.social-icon-link{
+    color:inherit;
+}
+.open-button{
+    grid-area: Button;
+    background-color: inherit;
+    border-style: none;
+    font-size:1em;
+}
+/****************************/
+.--hide{
+    display:none;
+}
+
+/************Small***********/
+@media screen and (max-width:767px){
+    .navbar{
+        grid-auto-flow:row;
+        min-width:315px;
+        grid-template-columns: auto;
+        height:unset;
+        max-width:100%;
+        justify-self:auto;
+    }
+    .navbar-header{
+        grid-auto-flow:column;
+        align-items: center;
+        justify-content:space-between;
+    }
+    .navbar-toggle{
+        display:grid;
+    }
+    .navbar-list--main{
+        grid-auto-flow:row;
+        display:none;
+    } 
+    .navbar-list-item--has-list{
+        max-width: 100%;
+    }
+    .overview{
+        padding:0;
+    }
+    .card-collection{
+        max-width:100%;
+    }
+    .footer{
+        grid-template-areas:
+        "Logo X"
+        "Rights Button"
+        "Social Y";
+    }
+}
+/***********Medium***********/
+@media  screen and (min-width:768px) and (max-width: 1023px) {   
+}
+/***********Large************/
+@media screen and (min-width:1024px){
+}
