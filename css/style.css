@@ -38,6 +38,7 @@ body {
 .hero-btn,
 .btn-link,
 .hero-img,
+.img,
 .about,
 .about-title,
 .services,
@@ -70,6 +71,8 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/***********NAVBAR*****************/
 .navbar{
     grid-area: Nav;
     grid-auto-flow:column;
@@ -114,7 +117,7 @@ body {
     color:#E63946;
 }
 
-/****************************/
+/***********CONTACT US FORM*****************/
 .form{
     width: 300px;
     position: fixed;
@@ -146,11 +149,21 @@ body {
     background-color: #E63946;;
     border: 1px solid #E63946;;
   }
-/****************************/
+
+/************HOME PAGE****************/
 .hero {
     background-color: #fff;
 }
 
+.hero-section {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr;
+}
+
+.hero-content {
+    grid-template-rows: 0.2fr 0.2fr 0.5fr 1fr;
+    align-items: center;
+}
 .title, .title2, .content, .btn-link {
     color: black;
     font-family: 'Raleway', sans-serif;
@@ -158,38 +171,42 @@ body {
 }
 
 .title {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bold;
     padding-top: 40px;
+    align-self: center;
+    height: fit-content;
 }
 
 .title2 {
-    font-size: 4rem;
-    padding-bottom: 2rem;
+    font-size: 3rem;
+    height: fit-content;
 }
 
-.hero-section {
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 2fr;
-}
 .hero-img {
     width: 100%;
-    align-self: center;
 }
 
+.img {
+    align-content: center;
+}
 .content {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 2rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .hero-btn {
     width: fit-content;
+    height: fit-content;
     justify-self: center;
     border-radius: 30px;
     background-color: #ffb100;
     border:#ffb100;
 }
-/****************************/
+
+/************ABOUT****************/
 .about {
     background-image: url(/assets/imgs/cool-background.png);
     background-repeat: no-repeat;
@@ -210,7 +227,8 @@ body {
     font-size: 1.5rem;
     padding-bottom: 40px;
 }
-/****************************/
+
+/************SERVICES****************/
 .services {
     background-color: #fff;
 }
@@ -243,14 +261,12 @@ body {
     text-align: center;
 }
 
-/****************************/
+/************OUR WORK****************/
 .ourwork {
     background-color: #fff;
 }
-/****************************/
+/************MEET THE TEAM****************/
 .overview{
-    grid-area: Overview;
-    /*background: linear-gradient(#efefef, #dfdfdf);*/
     background-color: #fff;
 }
 .card-collection{
@@ -317,7 +333,8 @@ body {
     color:#333;
     margin-bottom:10px;
 }
-/****************************/
+
+/***********FOOTER*****************/
 .footer{
     grid-area: Footer;
     grid-template-areas:"Logo Rights Social Button";
@@ -395,6 +412,10 @@ body {
     }
     .services-collection{
         grid-auto-flow: row;
+    }
+    .hero-section{
+        grid-auto-flow: row;
+        grid-template-columns: auto;
     }
 }
 /***********Medium***********/
