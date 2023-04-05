@@ -42,6 +42,8 @@ body {
 .hero-btn,
 .btn-link,
 .hero-img,
+.about,
+.about-title,
 .overview,
 .card-collection,
 .card-collection-title,
@@ -138,7 +140,6 @@ body {
     background-color: #fff;
 }
 
-
 .title, .title2, .content, .btn-link {
     color: black;
     font-family: 'Raleway', sans-serif;
@@ -148,15 +149,18 @@ body {
 .title {
     font-size: 6rem;
     font-weight: bold;
+    padding-top: 40px;
 }
 
 .title2 {
     font-size: 4rem;
     padding-bottom: 2rem;
 }
+
 .hero-section {
     grid-template-columns: auto;
 }
+
 .content {
     font-size: 2rem;
     padding-bottom: 2rem;
@@ -168,6 +172,25 @@ body {
     border-radius: 30px;
     background-color: #ffb100;
     border:#ffb100;
+}
+/****************************/
+.about {
+    grid-area: About;
+    background-image: url(/assets/imgs/cool-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-title {
+    font-family: 'Raleway' sans-serif;
+    font-size: 6rem;
+    padding-top: 40px;
+}
+
+.about-content {
+    font-family: 'Raleway' sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 40px;
 }
 /****************************/
 .overview{
