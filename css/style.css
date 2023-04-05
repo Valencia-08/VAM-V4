@@ -41,6 +41,10 @@ body {
 .img,
 .about,
 .about-title,
+.about-content,
+.about-section,
+.about-btn,
+.about-link,
 .services,
 .services-collection,
 .services-title,
@@ -204,6 +208,8 @@ body {
     border-radius: 30px;
     background-color: #ffb100;
     border:#ffb100;
+    color: black;
+    font-size: 1.2rem;
 }
 
 /************ABOUT****************/
@@ -213,19 +219,39 @@ body {
     background-size: cover;
 }
 
-.about-title, .about-content {
+.about-title, .about-section {
     color: white;
     font-family: 'Raleway', sans-serif;
-    text-align: center;
 }
 .about-title {
     font-size: 4rem;
     padding-top: 40px;
+    text-align: center;
+}
+
+.about-section {
+    padding-bottom: 50px;
 }
 
 .about-content {
     font-size: 1.5rem;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    text-align: block;
+}
+
+.about-btn {
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    border-radius: 30px;
+    background-color: #ffb100;
+    border:#ffb100;
+    font-size: 1.2rem;
+}
+
+.about-link {
+    text-decoration: none;
+    color: black;
 }
 
 /************SERVICES****************/
@@ -250,13 +276,13 @@ body {
     width: 100%;
 }
 .option-title{
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 20px;
     text-align: center;
 }
 
 .option-content{
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding-bottom: 20px;
     text-align: center;
 }
