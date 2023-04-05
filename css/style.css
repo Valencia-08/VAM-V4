@@ -8,6 +8,10 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas:
         "Nav"
+        "Hero"
+        "About"
+        "Services"
+        "OurWork"
         "Overview"
         "Footer";
     grid-template-rows: auto 1fr auto;
@@ -29,6 +33,15 @@ body {
 .form-input,
 .form-textarea,
 .form-button,
+.hero,
+.hero-section,
+.hero-content,
+.title,
+.title2,
+.content,
+.hero-btn,
+.btn-link,
+.hero-img,
 .overview,
 .card-collection,
 .card-collection-title,
@@ -119,6 +132,43 @@ body {
     background-color: #E63946;;
     border: 1px solid #E63946;;
   }
+/****************************/
+.hero {
+    grid-area: Hero;
+    background-color: #fff;
+}
+
+
+.title, .title2, .content, .btn-link {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.title2 {
+    font-size: 4rem;
+    padding-bottom: 2rem;
+}
+.hero-section {
+    grid-template-columns: auto;
+}
+.content {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.hero-btn {
+    width: fit-content;
+    justify-self: center;
+    border-radius: 30px;
+    background-color: #ffb100;
+    border:#ffb100;
+}
 /****************************/
 .overview{
     grid-area: Overview;
