@@ -38,8 +38,13 @@ body {
 .hero-btn,
 .btn-link,
 .hero-img,
+.img,
 .about,
 .about-title,
+.about-content,
+.about-section,
+.about-btn,
+.about-link,
 .services,
 .services-collection,
 .services-title,
@@ -47,6 +52,17 @@ body {
 .option-title,
 .option-img,
 .option-content,
+.ourwork,
+.ourwork-section,
+.ourwork-title,
+.slideshow-container,
+.mySlides,
+.fade,
+.numbertext,
+.text,
+.prev,
+.next,
+.dot,
 .overview,
 .card-collection,
 .card-collection-title,
@@ -70,6 +86,8 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/***********NAVBAR*****************/
 .navbar{
     grid-area: Nav;
     grid-auto-flow:column;
@@ -114,7 +132,7 @@ body {
     color:#E63946;
 }
 
-/****************************/
+/***********CONTACT US FORM*****************/
 .form{
     width: 300px;
     position: fixed;
@@ -146,11 +164,21 @@ body {
     background-color: #E63946;;
     border: 1px solid #E63946;;
   }
-/****************************/
+
+/************HOME PAGE****************/
 .hero {
     background-color: #fff;
 }
 
+.hero-section {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr;
+}
+
+.hero-content {
+    grid-template-rows: 0.2fr 0.2fr 0.5fr 1fr;
+    align-items: center;
+}
 .title, .title2, .content, .btn-link {
     color: black;
     font-family: 'Raleway', sans-serif;
@@ -158,99 +186,232 @@ body {
 }
 
 .title {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bold;
     padding-top: 40px;
+    align-self: center;
+    height: fit-content;
 }
 
 .title2 {
-    font-size: 4rem;
-    padding-bottom: 2rem;
+    font-size: 3rem;
+    height: fit-content;
 }
 
-.hero-section {
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 2fr;
-}
 .hero-img {
     width: 100%;
-    align-self: center;
 }
 
+.img {
+    align-content: center;
+}
 .content {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 2rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .hero-btn {
     width: fit-content;
+    height: fit-content;
     justify-self: center;
     border-radius: 30px;
     background-color: #ffb100;
     border:#ffb100;
+    color: black;
+    font-size: 1.2rem;
 }
-/****************************/
+
+/************ABOUT****************/
 .about {
     background-image: url(/assets/imgs/cool-background.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.about-title, .about-content {
+.about-title, .about-section {
     color: white;
     font-family: 'Raleway', sans-serif;
-    text-align: center;
 }
 .about-title {
     font-size: 4rem;
     padding-top: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about-section {
+    padding-bottom: 50px;
 }
 
 .about-content {
     font-size: 1.5rem;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    text-align: block;
 }
-/****************************/
+
+.about-btn {
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    border-radius: 30px;
+    background-color: #ffb100;
+    border:#ffb100;
+    font-size: 1.2rem;
+}
+
+.about-link {
+    text-decoration: none;
+    color: black;
+}
+
+/************SERVICES****************/
 .services {
     background-color: #fff;
 }
 .services-collection{
     grid-auto-flow: column;
+    padding: 30px 20px 40px;
 }
 .services-title, .option-title, .option-content{
     color: black;
     font-family: 'Raleway', sans-serif;
+
 }
 
 .services-title {
     font-size: 4rem;
     text-align: center;
     padding-top: 40px;
+    font-weight: bold;
 }
 .option-img{
     max-width:650px;
     width: 100%;
 }
 .option-title{
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 20px;
     text-align: center;
 }
 
 .option-content{
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding-bottom: 20px;
     text-align: center;
 }
 
-/****************************/
+/************OUR WORK****************/
 .ourwork {
     background-color: #fff;
 }
-/****************************/
+
+.ourwork-section, .ourwork-title {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.ourwork-title {
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 40px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    padding-top: 30px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+    padding: 8px 12px;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+
+  }
+  
+  /* Number text (1/4 etc) */
+  .numbertext {
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top: 0;
+  }
+  
+  .carasouelImg {
+
+    margin: auto;
+    display: block;
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+/************MEET THE TEAM****************/
 .overview{
-    grid-area: Overview;
-    /*background: linear-gradient(#efefef, #dfdfdf);*/
     background-color: #fff;
 }
 .card-collection{
@@ -261,12 +422,15 @@ body {
     justify-items: center;
     justify-self:center;
     max-width:75%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .card-collection-title{
-    color: #ffb100;
+    color: black;
     font-family: "Kumbh Sans", sans-serif;
-    font-size:5.9vw;
-    justify-self: center;
+    font-size:4rem;
+    text-align: center;
+    padding: 40px 40px 0px;
 }
 .card{
     color:black;
@@ -278,6 +442,8 @@ body {
     font-family: 'Raleway', sans-serif;
     grid-auto-flow: dense;
     transition: all 180ms ease-in-out;
+    height: 480px;
+    width: 370px;
 }
 .card:hover,.card:focus,card:active{
     transform: scale(1.05);
@@ -287,8 +453,9 @@ body {
     justify-self: center;
 }
 .card-title{
-    color:#333;
+    color:black;
     font-size:2em;
+    font-weight: bold;
 }
 .card-content{
     color:inherit;
@@ -317,7 +484,8 @@ body {
     color:#333;
     margin-bottom:10px;
 }
-/****************************/
+
+/***********FOOTER*****************/
 .footer{
     grid-area: Footer;
     grid-template-areas:"Logo Rights Social Button";
@@ -385,7 +553,10 @@ body {
         padding:0;
     }
     .card-collection{
-        max-width:100%;
+        max-width:80%;
+    }
+    .card {
+        width: 100%;
     }
     .footer{
         grid-template-areas:
@@ -396,9 +567,19 @@ body {
     .services-collection{
         grid-auto-flow: row;
     }
+    .hero-section{
+        grid-auto-flow: row;
+        grid-template-columns: auto;
+    }
 }
 /***********Medium***********/
-@media  screen and (min-width:768px) and (max-width: 1023px) {   
+@media  screen and (min-width:768px) and (max-width: 1023px) {  
+    .card-collection{
+        max-width:80%;
+    }
+    .card {
+        width: 100%;
+    }   
 }
 /***********Large************/
 @media screen and (min-width:1024px){
