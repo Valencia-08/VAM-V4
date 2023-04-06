@@ -342,13 +342,15 @@ body {
 
 /************ABOUT****************/
 .about {
-    background-image: url(/assets/imgs/cool-background.png);
+    background-image: linear-gradient(#fbfbfb, #e1e1e1);
+    color: black;
+   /* background-image: url(/assets/imgs/cool-background.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .about-title, .about-section {
-    color: white;
+    color: black;
     font-family: 'Raleway', sans-serif;
 }
 .about-title {
@@ -360,12 +362,14 @@ body {
 
 .about-section {
     padding-bottom: 50px;
+    color: black;
 }
 
 .about-content {
     font-size: 1.5rem;
     padding-bottom: 50px;
     text-align: block;
+    color: black;
 }
 
 .about-btn {
