@@ -100,12 +100,12 @@
         <button class="open-button">CONTACT US</button>
     </footer>
 
-    <form class="form --hide" action="" method="post">
+    <form class="form --hide" action="data.php" method="post">
         <h1 class="form-title">Send</h1>
         <label class="form-label" for="contactEmail">Email</label>
-        <input class="form-input" id="contactEmail" type="text" placeholder="Enter Email" required>
+        <input class="form-input" id="contactEmail" type="text" name="email" placeholder="Enter Email" required>
         <label class="form-label" for="contactMessage">Message</label>
-        <textarea class="form-textarea" id="contactMessage" rows="10" placeholder="Enter Message" required></textarea>
+        <textarea class="form-textarea" id="contactMessage" rows="10" name="message" placeholder="Enter Message" required></textarea>
         <button class="form-button form-button--send">Send</button>
         <button class="form-button form-button--cancel">Cancel</button>
     </form>
